@@ -1,0 +1,1 @@
+SELECT cd_role_type as `User Type`, count(in_status) as `Total Active`, (SELECT count(id_user) FROM user_profile WHERE nm_middle= '' OR nm_middle is NULL AND user_role.id_user=user_profile.id_user) AS no_nm FROM `user_role` WHERE in_status=1 group by cd_role_type
